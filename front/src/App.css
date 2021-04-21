@@ -1,0 +1,204 @@
+:root {
+    --primary-font: "Poppins", sans-serif;
+
+    --body-color: #f7f7f7;
+
+    --container-width: 80vw;
+    --icon-height: 23px;
+    --icon-margin: 56px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--body-color);
+    color: #252525;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.error,
+.page-not-found {
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+}
+
+.error .link-arrow,
+.page-not-found .link-arrow {
+    width: 40px;
+}
+
+.error {
+    top: 47%;
+}
+
+.page-not-found {
+    top: 45%;
+}
+
+.page-not-found {
+    text-align: center;
+}
+
+.error h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    margin-bottom: 1.5rem;
+}
+
+.page-not-found h1 {
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+}
+
+.page-not-found .status {
+    font-size: 8rem;
+    margin-bottom: 1rem;
+}
+
+.page-not-found .not-found-message {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.error a,
+.page-not-found a {
+    display: inline-block;
+    color: #008fff;
+    font-size: 1.2rem;
+}
+
+.error a span,
+.page-not-found a span {
+    margin-right: 1rem;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 8px solid #e4e4e4;
+    border-top: 8px solid #008fff;
+    transform: rotate(0);
+    animation: 1s spinning linear infinite;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container {
+    width: var(--container-width);
+    margin: auto;
+}
+
+.hide-in-large {
+    display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    :root {
+        --container-width: 90vw;
+        --icon-height: 20px;
+        --icon-margin: 40px;
+    }
+
+    body {
+        font-size: 0.9rem;
+    }
+
+    .error h1 {
+        font-size: 2.5rem;
+    }
+
+    .page-not-found .status {
+        font-size: 6rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-not-found .not-found-message {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .error a,
+    .page-not-found a {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    :root {
+        --container-width: calc(100% - 4rem);
+    }
+
+    .page-not-found .status {
+        font-size: 4rem;
+        margin-bottom: 0;
+    }
+
+    .page-not-found .not-found-message {
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .error a,
+    .page-not-found a {
+        text-align: left;
+        font-size: 1.3rem;
+    }
+
+    .error a span,
+    .page-not-found a span {
+        display: block;
+        margin: 0;
+    }
+
+    .spinner {
+        width: 75px;
+        height: 75px;
+        border: 7px solid #e4e4e4;
+        border-top: 7px solid #008fff;
+    }
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

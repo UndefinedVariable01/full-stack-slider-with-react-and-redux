@@ -1,0 +1,116 @@
+.links-and-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.links-and-controls .social-media {
+    height: var(--icon-height);
+}
+
+.links-and-controls .social-media a {
+    margin-right: var(--icon-margin);
+}
+
+.links-and-controls .social-media a svg {
+    height: var(--icon-height);
+}
+
+.links-and-controls .slider-controls {
+    display: flex;
+    align-items: center;
+}
+
+.links-and-controls .slider-controls .progress {
+    margin: 0 5rem;
+}
+
+.links-and-controls .slider-controls .progress p {
+    font-weight: 500;
+    height: 1px;
+    margin: 0;
+    transform: translateY(-1.7rem);
+}
+
+.links-and-controls .slider-controls .progress .bar {
+    background-color: #ccc;
+    width: 300px;
+    height: 2px;
+    border-radius: 99px;
+}
+
+.links-and-controls .slider-controls .progress .bar div {
+    background-color: #000;
+    height: 100%;
+    border-radius: 99px;
+    transition: 0.5s;
+}
+
+.links-and-controls .slider-controls .disabled-btn {
+    opacity: 0.3;
+}
+
+.links-and-controls .slider-controls .to-right-btn,
+.links-and-controls .slider-controls .to-left-btn {
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.links-and-controls .slider-controls .to-right-btn .btn-bar,
+.links-and-controls .slider-controls .to-left-btn .btn-bar {
+    background-color: #000;
+    width: 13px;
+    height: 2px;
+    margin: 6px;
+    border-radius: 99px;
+    transform-origin: center;
+}
+
+.links-and-controls .slider-controls .to-right-btn .top-bar {
+    transform: rotate(45deg);
+}
+
+.links-and-controls .slider-controls .to-right-btn .bottom-bar {
+    transform: rotate(135deg);
+}
+
+.links-and-controls .slider-controls .to-left-btn .top-bar {
+    transform: rotate(-45deg);
+}
+
+.links-and-controls .slider-controls .to-left-btn .bottom-bar {
+    transform: rotate(-135deg);
+}
+
+@media only screen and (max-width: 1200px) {
+    .links-and-controls {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .links-and-controls .slider-controls .progress {
+        margin: 0 3rem;
+    }
+
+    .links-and-controls .slider-controls .progress p {
+        transform: translateY(-1.6rem);
+    }
+
+    .links-and-controls .slider-controls .progress .bar {
+        width: 250px;
+    }
+
+    .links-and-controls .slider-controls .to-right-btn .btn-bar,
+    .links-and-controls .slider-controls .to-left-btn .btn-bar {
+        width: 10px;
+        margin: 4px;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .links-and-controls .slider-controls {
+        display: none;
+    }
+}

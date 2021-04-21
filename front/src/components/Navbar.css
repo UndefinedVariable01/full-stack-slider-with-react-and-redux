@@ -1,0 +1,219 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+}
+
+.navbar .nav-links {
+    position: relative;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-right: 4rem;
+}
+
+.navbar .nav-links li:first-child a {
+    margin-left: -1.25rem;
+}
+
+.navbar .nav-links li a {
+    padding: 0.625rem 1.25rem;
+}
+
+.navbar .large-nav-list {
+    position: relative;
+}
+
+.navbar .large-nav-list .indicator {
+    background-color: #000;
+    position: absolute;
+    left: -0.6rem;
+    bottom: 0.4rem;
+    width: 40px;
+    height: 1.8px;
+    border-radius: 99px;
+}
+
+.navbar .search-and-logs {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .search-and-logs .large-search {
+    height: var(--icon-height);
+}
+
+.navbar .search-and-logs svg {
+    height: var(--icon-height);
+    margin-right: var(--icon-margin);
+    cursor: pointer;
+}
+
+.navbar .search-and-logs .avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.small-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .navbar .nav-links li {
+        margin-right: 2rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .large-nav,
+    .large-search,
+    .large-avatar {
+        display: none;
+    }
+
+    .show-small-menu {
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar .search-and-logs svg {
+        margin: 0;
+    }
+
+    .small-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0);
+        z-index: 1;
+        animation: fade-in-menu-background 0.25s forwards;
+    }
+
+    .fade-out-menu-background {
+        animation: fade-out-menu-background 0.35s forwards;
+    }
+
+    .small-menu .menu-container {
+        position: relative;
+        width: 18rem;
+        height: 100%;
+        background-color: #fff;
+        padding: 2rem;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
+        transform: translateX(-18rem);
+        animation: slide-in-menu 0.25s forwards;
+    }
+
+    .slide-out-menu {
+        animation: slide-out-menu 0.35s forwards;
+    }
+
+    .small-menu .close-menu {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .small-menu .close-menu svg {
+        height: 15px;
+        pointer-events: none;
+    }
+
+    .small-avatar {
+        text-align: center;
+        width: 100%;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    .small-avatar .avatar {
+        display: inline-block;
+        width: 75px;
+        height: 75px;
+    }
+
+    .small-menu-search {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 2.5rem;
+    }
+
+    .small-menu-search svg {
+        height: var(--icon-height);
+        margin-right: 1rem;
+    }
+
+    .small-menu-search input {
+        width: auto;
+        padding: 0.3rem 0;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .small-menu-search input::placeholder {
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 1rem;
+    }
+
+    .small-menu nav ul li {
+        margin-bottom: 1.5rem;
+    }
+
+    .small-menu nav ul li a {
+        font-weight: 500;
+    }
+}
+
+@keyframes fade-in-menu-background {
+    from {
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    to {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+@keyframes slide-in-menu {
+    from {
+        transform: translateX(-18rem);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-out-menu-background {
+    from {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    to {
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes slide-out-menu {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-20rem);
+    }
+}
